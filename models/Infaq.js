@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const ModelSchema = new mongoose.Schema({
     judul: String,
     deskripsi: String,
+    bank: String,
     rekening: String,
     gambar: String,
     created: {

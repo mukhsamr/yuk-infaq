@@ -27,6 +27,8 @@ const LoginControllers = require('../controllers/LoginControllers')
 const InfaqControllers = require('../controllers/InfaqControllers')
 const BeritaControllers = require('../controllers/BeritaController')
 const LaporanControllers = require('../controllers/LaporanController')
+const FootnoteControllers = require('../controllers/FootnoteController')
+const AboutControllers = require('../controllers/AboutController')
 
 
 
@@ -58,6 +60,13 @@ router.post('/laporan', pdf, LaporanControllers.store)
 router.patch('/laporan/:id', pdf, LaporanControllers.update)
 router.delete('/laporan/:id', LaporanControllers.delete)
 
+// Footnote
+router.get('/footnote', FootnoteControllers.all)
+router.patch('/footnote/:id', FootnoteControllers.update)
+
+// About
+router.get('/about', AboutControllers.all)
+router.patch('/about/:id', AboutControllers.update)
 
 
 module.exports = router
