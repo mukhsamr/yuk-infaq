@@ -29,6 +29,7 @@ const BeritaControllers = require('../controllers/BeritaController')
 const LaporanControllers = require('../controllers/LaporanController')
 const FootnoteControllers = require('../controllers/FootnoteController')
 const AboutControllers = require('../controllers/AboutController')
+const UserControllers = require('../controllers/UserController')
 
 
 
@@ -67,6 +68,9 @@ router.patch('/footnote/:id', FootnoteControllers.update)
 // About
 router.get('/about', AboutControllers.all)
 router.patch('/about/:id', AboutControllers.update)
+
+// User
+router.patch('/user/:id', UserControllers.update)
 
 
 module.exports = router
