@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const ModelSchema = new mongoose.Schema({
     deskripsi: String,
+    medsos: Array,
     lokasi: {
         judul: String,
         link: String
@@ -10,7 +11,18 @@ const ModelSchema = new mongoose.Schema({
         judul: String,
         link: String
     },
+    website: {
+        judul: String,
+        link: String
+    },
+    channel: {
+        judul: String,
+    },
     instagram: {
+        judul: String,
+        link: String
+    },
+    instagram2: {
         judul: String,
         link: String
     },
