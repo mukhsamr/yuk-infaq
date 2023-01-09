@@ -9,15 +9,22 @@ module.exports = class LoginControllers {
 
         try {
             const cookie = req.cookies['_token']
+
+            if (!cookie) {
+                return res.status(403).send({
+                    message: 'no user found'
+                })
+            }
+
             const verify = jwt.verify(cookie, process.env.SECRET_KEY)
 
             if (!verify) {
-                return res.status(400).send({
+                return res.status(403).send({
                     message: 'unauthenticated'
                 })
             }
 
-            const user = await User.findOne({ _id: verify._id })
+            const user = await User.findOne({ _id: verify._id }).catch(e => e)
             res.status(200).json(user)
         } catch (err) {
             res.status(404).json({ message: err.message })

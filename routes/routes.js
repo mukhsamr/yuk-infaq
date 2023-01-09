@@ -30,6 +30,7 @@ const LaporanControllers = require('../controllers/LaporanController')
 const FootnoteControllers = require('../controllers/FootnoteController')
 const AboutControllers = require('../controllers/AboutController')
 const UserControllers = require('../controllers/UserController')
+const MidtransControllers = require('../controllers/MidtransController')
 
 
 
@@ -72,5 +73,8 @@ router.patch('/about/:id', AboutControllers.update)
 // User
 router.patch('/user/:id', UserControllers.update)
 
+
+// Midtrans
+router.post('/pay/token', MidtransControllers.token)
 
 module.exports = router
